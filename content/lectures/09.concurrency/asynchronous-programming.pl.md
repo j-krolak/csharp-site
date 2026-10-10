@@ -76,7 +76,7 @@ Metody asynchroniczne w C# są realizowane jako forma korutyn. Metoda asynchroni
 2. Instruuje kompilator, aby przekształcił metodę w maszynę stanów, która potrafi zarządzać zawieszaniem i wznawianiem swojego działania.
 
 * Słowo `async` samo w sobie nie tworzy nowego wątku. Samo oznaczenie metody jako `async` nie sprawia, że wykonuje się ona w tle. Metoda rozpoczyna swoje działanie synchronicznie na bieżącym wątku. Dopiero napotkanie `await` na operacji, która jeszcze się nie zakończyła, powoduje zawieszenie metody i zwolnienie wątku.
-* Typy zwracane: Metoda `async` musi zwracać jeden z trzech typów:
+* Typy zwracane: Metoda `async` najczęściej zwraca jeden z trzech typów:
   * `Task`: Dla operacji asynchronicznych, które nie zwracają wartości.
   * `Task<TResult>`: Dla operacji, które po zakończeniu zwracają wartość typu TResult.
   * `void`: **Zalecane tylko dla obsługi zdarzeń** (np. `async void Button_Click(...)`). Użycie `async void` w innych miejscach jest złą praktyką, ponieważ utrudnia obsługę wyjątków i śledzenie zakończenia operacji.

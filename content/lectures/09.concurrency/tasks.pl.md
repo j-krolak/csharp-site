@@ -27,7 +27,7 @@ Task task = Task.Run(() =>
 });
 ```
 
-Metoda `Wait` pozwala blokujaco zaczekać, aż zadanie się nie zakończy.
+Metoda `Wait` pozwala blokująco zaczekać, aż zadanie się nie zakończy.
 
 ```csharp
 Console.WriteLine($"Is completed: {task.IsCompleted}");

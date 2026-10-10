@@ -104,7 +104,7 @@ public class Program
 The `For` and `ForEach` methods include an overload that exposes `ParallelLoopState` in the delegate. Using it, loops can be broken early.
 
 *   `ParallelLoopState.Break()` ensures that all currently processed iterations, and all iterations with a lower index than the one for which `Break()` was called, will be executed. Further iterations with higher indices will not be started.
-*   `ParallelLoopState.Stop()` immediately halts the work of all threads.
+*   `ParallelLoopState.Stop()` prevents any further iterations from starting; iterations already in progress are not interrupted.
 
 ```csharp
 public static ParallelLoopResult For(
@@ -257,3 +257,4 @@ public class Program
         return true;
     }
 }
+```

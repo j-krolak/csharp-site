@@ -83,7 +83,7 @@ Thread.Sleep(millisecondsTimeout: 10);
 ```
 
 > [!NOTE]
-> Operacje `Sleep` i `Join` to operacje **blokujące**, które powodują, że wątek jest wstrzymywany przez system operacyjny i nie zużywa czasu procesora, dopóki nie zajdzie zdarzenie, na które wątek czeka. Inne typowe operacje blokujące to czekanie na prymitywy synchronizacji (np. `Mutex.Wait()`), albo oberacje I/O (np. `File.ReadAllText()`).
+> Operacje `Sleep` i `Join` to operacje **blokujące**, które powodują, że wątek jest wstrzymywany przez system operacyjny i nie zużywa czasu procesora, dopóki nie zajdzie zdarzenie, na które wątek czeka. Inne typowe operacje blokujące to czekanie na prymitywy synchronizacji (np. `Mutex.WaitOne()`), albo operacje I/O (np. `File.ReadAllText()`).
 
 ## Wątki pierwszo- i drugoplanowe (Background Threads)
 
@@ -217,7 +217,7 @@ public class Program
 }
 ```
 
-> Pula wątków jest zarządzana przez *Runtime*, początkowo znajduje się tyle wątków, ile jest w systemie dostępnych fizycznych rdzeni. *Runtime* w zależności od potrzeb dokłada lub usuwa wątki z puli.
+> Pula wątków jest zarządzana przez *Runtime*, początkowo znajduje się tyle wątków, ile jest w systemie dostępnych procesorów logicznych. *Runtime* w zależności od potrzeb dokłada lub usuwa wątki z puli.
 
 > [!NOTE]
 > Chociaż wątki są podstawą współbieżności, to w nowoczesnym C# bardzo rzadko korzysta się z nich bezpośrednio. Preferowane są abstrakcje wyższego poziomu operujące na wbudowanej puli wątków, takie jak `Task`, `Parallel` i `async/await`.

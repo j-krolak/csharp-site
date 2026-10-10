@@ -40,7 +40,7 @@ await foreach(var item in asyncSequence)
 > [!NOTE]
 > Żeby przekazać `CancellationToken` do sekwencji można użyć metody rozszerzającej `WithCancellation(CancellationToken token)`, np: `await foreach(var item in asyncSequence.WithCancellation(token))`.
 
-Podobnie jak `foreach`, `async foreach` jest cukierkiem składniowym. Kompilator rozwija tą instrukcję następująco:
+Podobnie jak `foreach`, `await foreach` jest cukierkiem składniowym. Kompilator rozwija tą instrukcję następująco:
 
 ```csharp
 IAsyncEnumerable<int> asyncSequence = RangeAsync(from: 0, to: 100, delay: 50);
