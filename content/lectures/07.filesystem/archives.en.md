@@ -5,7 +5,7 @@ weight: 30
 
 # Archives
 
-Archives are files that act as containers for other files and folders. The C# standard library allows working with archives in `.zip` and `.tar` (from .NET 7) formats through classes in the `System.IO.Compression` namespace.
+Archives are files that act as containers for other files and folders. The C# standard library allows working with archives in `.zip` and `.tar` (from .NET 7) formats through classes in the `System.IO.Compression` and `System.Formats.Tar` namespaces.
 
 ## ZIP Archives
 

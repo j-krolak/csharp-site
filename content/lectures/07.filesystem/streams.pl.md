@@ -249,7 +249,7 @@ classDiagram
 
 ### `BufferedStream` 
 
-`BufferedStream` dodaje buforowanie do strumienia. Opakowywuje on inny strumień (np. FileStream) i utrzymuje w pamięci bufor (np. 4KB). Gdy spróbujemy odczytać z niego mniejszą ilość bajtów, `BufferedStream` w rzeczywistości odczyta na raz z pliku 4KB i zapisze je do wewnętrznego bufora, z którego będziemy czytać aż bufor się nie wyczerpie. Analogicznie byłoby z zapisem. Czytanie z i zapis do pamięci RAM jest dużo szybsze niż operacje na plikach na dysku, a buforowanie pozwala na minimalizację ilości kosztownych operacji I/O.
+`BufferedStream` dodaje buforowanie do strumienia. Opakowuje on inny strumień (np. FileStream) i utrzymuje w pamięci bufor (np. 4KB). Gdy spróbujemy odczytać z niego mniejszą ilość bajtów, `BufferedStream` w rzeczywistości odczyta na raz z pliku 4KB i zapisze je do wewnętrznego bufora, z którego będziemy czytać aż bufor się nie wyczerpie. Analogicznie byłoby z zapisem. Czytanie z i zapis do pamięci RAM jest dużo szybsze niż operacje na plikach na dysku, a buforowanie pozwala na minimalizację ilości kosztownych operacji I/O.
 
 ```csharp
 // Write 100K bytes to a file:
@@ -265,7 +265,7 @@ Console.WriteLine(fs.Position); // 20000
 
 ### Kompresja
 
-Biblioteka standardowa dostarcza trzy metody kompresji reprezentowane przez dekoratory strumieni `GZipStream`, `DeflateStream`, `BrotliStream`. Gdy opakowujemy strumień w np. `GZipStream` i zapisujemy do niego dane, `GZipStream` najpierw kompresuje te dane zanim przekaże je dalej do opakowanego strumienia. Podczas odczytów proces jest odwrotny: `GzipStream` czyta skompresowane dane z opakowanego strumienia i dekompresuje je zanim je zwróci.
+Biblioteka standardowa dostarcza trzy metody kompresji reprezentowane przez dekoratory strumieni `GZipStream`, `DeflateStream`, `BrotliStream`. Gdy opakowujemy strumień w np. `GZipStream` i zapisujemy do niego dane, `GZipStream` najpierw kompresuje te dane zanim przekaże je dalej do opakowanego strumienia. Podczas odczytów proces jest odwrotny: `GZipStream` czyta skompresowane dane z opakowanego strumienia i dekompresuje je zanim je zwróci.
 
 1. Kompresja
 
@@ -325,7 +325,7 @@ Największą przewagą nad API POSIX są adaptery strumieni. Dla strumieni mamy 
 
 ### Adaptery tekstu
 
-Adaptery tekstu dodają do strumienia możliwość odczytu i zapisu znaków, słów i całych linii tekstu. Pozwalają na operacje takie jak `string? ReadLine()`, `string? ReadToEnd()`, `void WriteLine(string str)`, `void Write(string str)`.
+Adaptery tekstu dodają do strumienia możliwość odczytu i zapisu znaków, słów i całych linii tekstu. Pozwalają na operacje takie jak `string? ReadLine()`, `string ReadToEnd()`, `void WriteLine(string str)`, `void Write(string str)`.
 
 1. `StreamReader`
    ```csharp
