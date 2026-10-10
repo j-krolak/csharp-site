@@ -45,7 +45,7 @@ It is worth remembering that for a generator to extend a programmer-written clas
 
 Partial methods allow declaring a method signature in one file and its implementation in another. They operate in two modes:
 
-1.  **Optional:** If the method returns `void`, is private, and has no `out` parameters, its implementation is optional. If not provided, the compiler completely removes the method call from the resulting code.
+1.  **Optional:** If the method returns `void`, has no access modifier, and has no `out` parameters, its implementation is optional. If not provided, the compiler completely removes the method call from the resulting code.
 2.  **Required (C# 9.0+):** If the method has an access modifier (e.g., `public`) or returns a value, the implementation **must** be provided (usually by a generator).
 
 ```csharp
