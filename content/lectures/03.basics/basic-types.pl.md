@@ -5,7 +5,7 @@ weight: 20
 
 # Typy podstawowe
 
-Słowa kluczowe typów wbudowanych (np. `int`, `double`, `bool`) są bezpośrednimi aliasami dla typów zdefiniowanych w przestrzeni nazw `System` (np. `System.Int32`, `System.Double`, `System.Boolean`). Warto pamiętać, że te typy to zwykłe klasy w bibliotece standardowej, w nich są zdefiniowane przydatne stałe i metody, np. `int.MaxValue`, `int.Parse(string)`, `float.NegativeInfinity`.
+Słowa kluczowe typów wbudowanych (np. `int`, `double`, `bool`) są bezpośrednimi aliasami dla typów zdefiniowanych w przestrzeni nazw `System` (np. `System.Int32`, `System.Double`, `System.Boolean`). Warto pamiętać, że te typy to zwykłe struktury w bibliotece standardowej, w nich są zdefiniowane przydatne stałe i metody, np. `int.MaxValue`, `int.Parse(string)`, `float.NegativeInfinity`.
 
 ## Typy numeryczne
 
@@ -49,7 +49,7 @@ Wymagają świadomej decyzji programisty i użycia operatora rzutowania `(typ)`.
 
 Konwersja z `double` lub `float` na typ całkowitoliczbowy powoduje **obcięcie** części ułamkowej.
 
-Dla typów całkowitoliczbowych jeżeli operacja powoduje **przepełnienie** (wartość przekracza zakres typu docelowego), to domyślnym zachowaniem jest wykonanie operacji tak jakby była ona wykonana na typie większym i obcięcie bitów znaczących.
+Dla typów całkowitoliczbowych, jeżeli operacja powoduje **przepełnienie** (wartość przekracza zakres typu docelowego), to domyślnym zachowaniem jest wykonanie operacji tak jakby była ona wykonana na typie większym i obcięcie najbardziej znaczących bitów.
 
 ```csharp
 double d = 99.9;
@@ -109,7 +109,7 @@ W odróżnieniu od C++ nie istnieją konwersje między `bool` a typami liczbowym
 
 ### Operatory porównania
 
-Dla typów bezpośrednich operacja porównania **zazwyczaj** sprawdza czy wartości są identyczne.
+Dla typów bezpośrednich operacja porównania **zazwyczaj** sprawdza, czy wartości są identyczne.
 
 ```csharp
 int a = 5;
@@ -119,7 +119,7 @@ Console.WriteLine(a == b); // true
 Console.WriteLine(a == c); // false
 ```
 
-Dla typów referencyjnych operacja porównania **domyślnie** sprawdza czy referencje wskazują na ten sam obiekt.
+Dla typów referencyjnych operacja porównania **domyślnie** sprawdza, czy referencje wskazują na ten sam obiekt.
 
 ```csharp
 Person p1 = new Person {Name = "Alice", Age = 30};
@@ -132,7 +132,7 @@ Console.WriteLine(p3 == p4); // true
 public class Person { public string Name; public int Age; }
 ```
 
-> Operatory porównania mogą być nadpisane, tak, żeby zwracały dowolny typ. W praktyce nie ma to zbyt wiele sensu.
+> Operatory porównania mogą być przeciążone, tak, żeby zwracały dowolny typ. W praktyce nie ma to zbyt wiele sensu.
 
 ### Operacje skrócone (*Short-Circuiting*)
 
@@ -153,7 +153,7 @@ W tym przykładzie dzięki temu mechanizmowi unikamy `NullReferenceException`. J
 
 Typ `char` (alias typu `System.Char`) w .NET ma stały rozmiar 2 bajtów - to znak kodowany w UTF-16.
 
-Typ `char` można niejawnie konwertować na inne typy liczbowe jeżeli ten typ pomieści w sobie `ushort`. W przeciwnym wypadku wymagana jest jawna konwersja.
+Typ `char` można niejawnie konwertować na inne typy liczbowe, jeżeli ten typ pomieści w sobie `ushort`. W przeciwnym wypadku wymagana jest jawna konwersja.
 
 ```csharp
 char a = 'A';
@@ -163,7 +163,7 @@ char copyright = '\u00A9';
 
 ## Klasa `Convert`
 
-Klasa Convert zawiera mnóstwo przydatnych metod do konwersji między typami. Daje możliwość konwersji między typami podstawowymi i stringami, czy konwersje między typem `bool` i liczbowymi. Konwersje z użyciem tej klasy zaokrąglają liczby zmiennoprzecinkowe przy konwersji do liczb całkowitoliczbowych.
+Klasa Convert zawiera mnóstwo przydatnych metod do konwersji między typami. Daje możliwość konwersji między typami podstawowymi i stringami, czy konwersji między typem `bool` i liczbowymi. Konwersje z użyciem tej klasy zaokrąglają liczby zmiennoprzecinkowe przy konwersji do liczb całkowitych.
 
 ```csharp
 int number = Convert.ToInt32("42");
