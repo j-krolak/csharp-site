@@ -124,7 +124,7 @@ Console.WriteLine($"\nNumber of planets after clearing: {planets.Count}");
 
 ### The IDictionary<TKey, TValue> Interface
 
-Dictionaries are collections of key-value pairs in which the keys are unique. The dictionary interface provides two properties that allow access to a collection of only the keys (`Keys`) or only the values (`Values`). Most often, working with a dictionary involves using the indexer. We can use it to add new values, update existing ones, and retrieve existing values. Accessing a value that is not in the dictionary throws a `KeyNotFoundException`, so if we are not sure if a value exists, it is better to use the `TryGetValue` method. Inserting a new value or updating a value using the indexer always succeeds. The `Add` method, on the other hand, throws an `ArgumentException` if the value is already in the dictionary.
+Dictionaries are collections of key-value pairs in which the keys are unique. The dictionary interface provides two properties that allow access to a collection of only the keys (`Keys`) or only the values (`Values`). Most often, working with a dictionary involves using the indexer. We can use it to add new values, update existing ones, and retrieve existing values. Accessing a value that is not in the dictionary throws a `KeyNotFoundException`, so if we are not sure if a value exists, it is better to use the `TryGetValue` method. Inserting a new value or updating a value using the indexer always succeeds. The `Add` method, on the other hand, throws an `ArgumentException` if the key is already in the dictionary.
 
 ```csharp
 public interface IDictionary<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>
@@ -275,7 +275,7 @@ The most popular implementations of this interface are the `HashSet<T>` class, w
 
 ### Other Collections
 
-Besides the main branches of the hierarchy, there are other important collections that **directly implement `ICollection<T>`** without being a list, dictionary, or set:
+Besides the main branches of the hierarchy, there are other important collections that are not a list, dictionary, or set:
 
 - `LinkedList<T>` - A generic doubly-linked list. Unlike `List<T>`, it is optimized for frequent addition and removal of elements at any place in the list, as this does not require shifting subsequent elements.
 - `Queue<T>` - Implements a **FIFO** (First-In, First-Out) queue, internally using a **dynamically sized array**. The main methods are `Enqueue` (adds to the end) and `Dequeue` (retrieves from the beginning).

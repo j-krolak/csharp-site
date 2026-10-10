@@ -287,10 +287,24 @@ foreach (var item in query)
 public record Category(int Id, string Name);
 public record Product(string Name, int CategoryId);
 ```
+Łączymy dwie listy po categories.Id i products.CategoryId
+Wynik dla powyższego przykładu w formie tabeli wygląda następująco:
+
+```diff
++-----------+-------------+
+| Product   | Category    |
++-----------+-------------+
+| Laptop    | Electronics |
+| Milk      | Food        |
+| Keyboard  | Electronics |
+| Bread     | Food        |
+| Monitor   | Electronics |
++-----------+-------------+
+```
 
 #### Metoda `GroupJoin`
 
-Łączy dwie sekwencje na podstawie pasujących kluczy, ale zachowuje grupowanie. Działa jak `LEFT OUTER JOIN` w SQL, gdzie dla każdego elementu z pierwszej (lewej) sekwencji dostajemy grupę pasujących elementów z drugiej.
+Łączy dwie sekwencje na podstawie pasujących kluczy, ale zachowuje grupowanie. Działa jak `LEFT OUTER JOIN` połączony z `GROUP BY` w SQL, gdzie dla każdego elementu z pierwszej (lewej) sekwencji dostajemy grupę pasujących elementów z drugiej.
 
 ```csharp
 var categories = new List<Category>
@@ -332,6 +346,18 @@ public record Category(int Id, string Name);
 public record Product(string Name, int CategoryId);
 ```
 
+Wynik dla powyższego przykładu:
+
+```diff
+Category: Electronics
+  - Laptop
+  - Keyboard
+Category: Food
+  - Milk
+Category: Toys
+  - (No products in this category)
+```
+
 #### Metoda `Zip`
 
 Łączy dwie sekwencje "element po elemencie", tworząc nową sekwencję, której każdy element jest wynikiem funkcji zastosowanej do par elementów z obu sekwencji wejściowych. Długość wynikowej sekwencji jest równa długości krótszej z sekwencji wejściowych.
@@ -364,7 +390,7 @@ Określają dodatkowe kryterium sortowania dla elementów, które są równe wed
 ```csharp
 var people = new[] { new { L = "Smith", F = "John" }, new { L = "Doe", F = "Jane" }, new { L = "Smith", F = "Anna" } };
 var sorted = people.OrderBy(p => p.L).ThenBy(p => p.F);
-// sorted: Anna Smith, Jane Doe, John Smith
+// sorted: Jane Doe, Anna Smith, John Smith
 ```
 
 #### Metoda `Reverse`
@@ -391,6 +417,55 @@ Grupuje elementy na podstawie klucza. Wynikiem jest sekwencja grup (`IGrouping<T
 var numbers = new[] { 1, 2, 3, 4, 5 };
 var groups = numbers.GroupBy(n => n % 2 == 0 ? "Even" : "Odd");
 // Creates two groups: one for "Odd" key with {1,3,5}, one for "Even" key with {2,4}
+```
+
+`GroupBy` często używa się razem z [funkcjami agregującymi](#agregacja).
+W poniższym przykładzie jest użyta z `Count` i zlicza produkty w każdej kategorii
+
+```csharp
+var categories = new List<Category>
+{
+    new(1, "Electronics"),
+    new(2, "Food"),
+    new(3, "Toys") 
+};
+var products = new List<Product>
+{
+    new("Laptop", 1),
+    new("Milk", 2),
+    new("Keyboard", 1),
+    new("Bread", 2),
+    new("Monitor", 1),
+    new("Spaceship", 4) 
+};
+
+var counts = products
+    .GroupBy(p => p.CategoryId)
+    .Select(g => new { CategoryId = g.Key, Count = g.Count() })
+    .OrderBy(x => x.CategoryId);
+
+// Print as a table
+Console.WriteLine("+------------+-------+");
+Console.WriteLine("| CategoryId | Count |");
+Console.WriteLine("+------------+-------+");
+foreach (var row in counts)
+    Console.WriteLine($"| {row.CategoryId,-10} | {row.Count,5} |");
+Console.WriteLine("+------------+-------+");
+
+public record Category(int Id, string Name);
+public record Product(string Name, int CategoryId);
+```
+
+Wynik dla powyższego przykładu w formie tabeli wygląda następująco:
+
+```diff
++------------+-------+
+| CategoryId | Count |
++------------+-------+
+| 1          |     3 |
+| 2          |     2 |
+| 4          |     1 |
++------------+-------+
 ```
 
 #### Metoda `Chunk`
