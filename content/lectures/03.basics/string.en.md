@@ -115,7 +115,7 @@ var xml = """
           </element>
           """;
 var str3 = """"
-           \'''Raw string literals\''' can start
+           """Raw string literals""" can start
            and end with more than three
            double-quotes when needed.
            """";

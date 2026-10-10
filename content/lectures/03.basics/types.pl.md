@@ -189,4 +189,4 @@ public class Person { public string Name; public int Age; }
 ```
 
 - W przypadku `ModifyValueType`, metoda operuje na w pełni niezależnej kopii struktury `Point`. Zmiany są niewidoczne na zewnątrz.
-- W przypadku `ModifyReferenceType`, metoda otrzymuje kopię referencji, która wskazuje na ten sam obiekt `Person`. Zmiana właściwości `Name` jest trwała, ponieważ modyfikuje współdzielony obiekt. Gdybyśmy jednak przypisali do parametru `person` nową instancję (`new Person(...)`), wpłynęłoby to tylko na lokalną kopię referencji, a oryginalna zmienna poza metodą nadal wskazywałaby na pierwotny obiekt.
+- W przypadku `ModifyReferenceType`, metoda otrzymuje kopię referencji, która wskazuje na ten sam obiekt `Person`. Zmiana pola `Name` jest trwała, ponieważ modyfikuje współdzielony obiekt. Gdybyśmy jednak przypisali do parametru `person` nową instancję (`new Person(...)`), wpłynęłoby to tylko na lokalną kopię referencji, a oryginalna zmienna poza metodą nadal wskazywałaby na pierwotny obiekt.

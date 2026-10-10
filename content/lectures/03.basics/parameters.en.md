@@ -97,7 +97,7 @@ static string Concat(string str, params string[] strings)
 Parameters in C# can have default values. The default value must be a compile-time constant. All default parameters must be defined after any required parameters. If there is a need to omit some optional parameters, you can specify which ones you want to assign a value to by using named arguments.
 
 ```csharp
-public void ExampleMethod(int required,
+static void ExampleMethod(int required,
                           string optionalstr = "default",
                           int optionalint = 10) {}
 ExampleMethod(3, "parameter", 7);

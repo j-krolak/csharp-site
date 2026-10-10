@@ -97,7 +97,7 @@ static string Concat(string str, params string[] strings)
 Parametry w C# mogą mieć wartość domyślną. Wartość domyślna musi być stała w czasie kompilacji. Wszystkie parametry domyślne muszą być zdefiniowane po parametrach wymaganych. Jeżeli jest potrzeba pominięcia niektórych opcjonalnych parametrów, można wybrać którym z nich chcemy nadać wartość używając argumentów nazwanych.
 
 ```csharp
-public void ExampleMethod(int required,
+static void ExampleMethod(int required,
                           string optionalstr = "default",
                           int optionalint = 10) {}
 ExampleMethod(3, "parameter", 7);
