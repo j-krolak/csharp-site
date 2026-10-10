@@ -129,7 +129,7 @@ Event-driven programming is the foundation of how all user interfaces work. Acti
 
 ### Example
 
-The diagram above illustrates the flow of events in an example system:
+The diagram below illustrates the flow of events in an example system:
 
 *   The `Product` class is the main **publisher** – it informs about changes to its price and stock level.
 *   `Notifier` and `ShoppingCart` are **subscribers** to events from `Product`. `Notifier` reacts to changes in stock, and `ShoppingCart` to price changes to recalculate its value.

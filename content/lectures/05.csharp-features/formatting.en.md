@@ -49,7 +49,7 @@ var date = new DateTime(2025, 12, 25);
 
 // Assuming current culture is pl-PL
 Console.WriteLine($"Price: {price:C}"); // Output: Price: 1 250,50 zł
-Console.WriteLine($"Date: {date:D}");   // Output: Date: 25 grudnia 2025
+Console.WriteLine($"Date: {date:D}");   // Output: Date: czwartek, 25 grudnia 2025
 ```
 
 > Starting from .NET 6 we can interpolate `string`s using chosen format provider, using static helper method `string.Create`:
@@ -182,7 +182,7 @@ These are the most commonly used formats that cover most typical use cases.
 | `D`         | Decimal         | `(123).ToString("D5")`       | `00123`          |
 | `F`         | Fixed-point     | `(1234.567).ToString("F2")`  | `1234.57`        |
 | `N`         | Number          | `(1234.567).ToString("N2")`  | `1,234.57`       |
-| `P`         | Percent         | `(0.123).ToString("P1")`     | `12.3 %`         |
+| `P`         | Percent         | `(0.123).ToString("P1")`     | `12.3%`          |
 | `X`         | Hexadecimal     | `(255).ToString("X")`        | `FF`             |
 
 > [!NOTE]

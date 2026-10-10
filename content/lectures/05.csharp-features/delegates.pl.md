@@ -210,7 +210,7 @@ write("world");
 
 ### Przechwytywanie zmiennych
 
-W wyrażeniach lambda możemy odwoływać się do zmiennych na zewnątrz. Mówimy że takie zmienne sa przechwytywane. To co się dzieje kiedy przechwytujemy zmienną, to kompilator generuje specjalną klasę w której przechowywane są przechwycone zmienne. Jeśli wiele lambd odwołuje się do tego samego pola, to wszystkie będą się odwoływać do tej samej instancji wygenerowanej klasy i tego samego pola. Przechwycone zmienne żyją na stosie jako część wygenerowanej klasy. Należy pamiętać, że przechwytywanie zmiennych wiąże się z alokacją obiektu na stercie.
+W wyrażeniach lambda możemy odwoływać się do zmiennych na zewnątrz. Mówimy że takie zmienne sa przechwytywane. To co się dzieje kiedy przechwytujemy zmienną, to kompilator generuje specjalną klasę w której przechowywane są przechwycone zmienne. Jeśli wiele lambd odwołuje się do tej samej zmiennej, to wszystkie będą się odwoływać do tej samej instancji wygenerowanej klasy i tego samego pola. Przechwycone zmienne żyją na stercie jako część wygenerowanej klasy. Należy pamiętać, że przechwytywanie zmiennych wiąże się z alokacją obiektu na stercie.
 
 Zmienna `i` zostanie przechwycona i zostanie umieszczona na stercie, będzie współdzielona przez wszystkie lambdy:
 
