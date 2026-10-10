@@ -76,7 +76,7 @@ Asynchronous methods in C# are implemented as a form of coroutines. An asynchron
 2.  It instructs the compiler to transform the method into a state machine that can manage suspending and resuming its execution.
 
 *   The `async` keyword itself does not create a new thread. Simply marking a method as `async` does not make it run in the background. The method begins execution synchronously on the current thread. Only when it encounters an `await` on an operation that has not yet completed does the method suspend, and the thread is released.
-*   Return Types: An `async` method must return one of three types:
+*   Return Types: An `async` method most commonly returns one of three types:
     *   `Task`: For asynchronous operations that do not return a value.
     *   `Task<TResult>`: For operations that return a value of type TResult upon completion.
     *   `void`: **Recommended only for event handlers** (e.g., `async void Button_Click(...)`). Using `async void` elsewhere is bad practice because it makes exception handling and tracking the operation's completion difficult.

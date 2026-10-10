@@ -40,7 +40,7 @@ await foreach(var item in asyncSequence)
 > [!NOTE]
 > To pass a `CancellationToken` to a sequence, you can use the `WithCancellation(CancellationToken token)` extension method, e.g.: `await foreach(var item in asyncSequence.WithCancellation(token))`.
 
-Similar to `foreach`, `async foreach` is syntactic sugar. The compiler expands this statement as follows:
+Similar to `foreach`, `await foreach` is syntactic sugar. The compiler expands this statement as follows:
 
 ```csharp
 IAsyncEnumerable<int> asyncSequence = RangeAsync(from: 0, to: 100, delay: 50);

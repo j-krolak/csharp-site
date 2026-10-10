@@ -101,10 +101,10 @@ public class Program
 
 ### Przerwanie pętli
 
-Metody `For` i `Foreach` zawierają przeciążenie, które wystawia `ParallelLoopState` w delegacie. Za jego pomocą pętle można przerwać wcześnie.
+Metody `For` i `ForEach` zawierają przeciążenie, które wystawia `ParallelLoopState` w delegacie. Za jego pomocą pętle można przerwać wcześnie.
 
 * `ParallelLoopState.Break()` zapewnia, że zostaną wykonane wszystkie iteracje, które są aktualnie przetwarzane, oraz wszystkie iteracje o niższym indeksie niż ta, dla której wywołano `Break()`. Dalsze iteracje o wyższych indeksach nie będą rozpoczynane.
-* `ParallelLoopState.Stop()` natychmiast wstrzymuje pracę wszystkich wątków
+* `ParallelLoopState.Stop()` powoduje, że żadne kolejne iteracje nie będą rozpoczynane; już trwające iteracje nie są przerywane
 
 ```csharp
 public static ParallelLoopResult For(
