@@ -22,7 +22,7 @@ Przestrzeń nazw `System.Collections.Concurrent` zawiera kolekcje zoptymalizowan
 > Iteracja po współbieżnej kolekcji podczas równoczesnej modyfikacji przez inny wątek, może zawierać zarówno już usunięte, jak i nowo dodane wartości, ale nie skończy się rzuceniem wyjątku.
 
 > [!INFO]
-> `ConcurrentQueue`, `ConcurrentStack`, `ConcurrentBag` używają wewnętrznie list dwukierunkowych. W `ConcurrentBag<T>`, każdy wątek otrzymuje swoją własną prywatną listę, dzięki czemu pobieranie elementu jest bardzo szybkie i bez wyścigów, pod warunkiem, że każdy wątek nie pobiera więcej elementów niż włożył.
+> `ConcurrentQueue`, `ConcurrentStack`, `ConcurrentBag` używają wewnętrznie list powiązanych. W `ConcurrentBag<T>`, każdy wątek otrzymuje swoją własną prywatną listę, dzięki czemu pobieranie elementu jest bardzo szybkie i bez wyścigów, pod warunkiem, że każdy wątek nie pobiera więcej elementów niż włożył.
 
 ## `IProducerConsumerCollection`
 
