@@ -64,7 +64,7 @@ public class Product
 ```
 
 > [!IMPORTANT]
-> Definicja systemowego delegatu `EvenetHandler`:
+> Definicja systemowego delegatu `EventHandler`:
 > ```csharp
 > public delegate void EventHandler<TEventArgs>(object? sender, TEventArgs e);
 > ```
@@ -129,7 +129,7 @@ Programowanie sterowane zdarzeniami to podstawa działania wszystkich interfejs�
 
 ### Przykład
 
-Powyższy diagram ilustruje przepływ zdarzeń w przykładowym systemie:
+Poniższy diagram ilustruje przepływ zdarzeń w przykładowym systemie:
 
 *   Klasa `Product` jest głównym **wydawcą** – informuje o zmianach swojej ceny oraz stanu magazynowego.
 *   `Notifier` i `ShoppingCart` to **subskrybenci** zdarzeń z `Product`. `Notifier` reaguje na zmiany w magazynie, a `ShoppingCart` na zmiany cen, aby przeliczyć swoją wartość.

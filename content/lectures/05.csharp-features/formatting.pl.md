@@ -49,7 +49,7 @@ var date = new DateTime(2025, 12, 25);
 
 // Assuming current culture is pl-PL
 Console.WriteLine($"Price: {price:C}"); // Output: Price: 1 250,50 zł
-Console.WriteLine($"Date: {date:D}");   // Output: Date: 25 grudnia 2025
+Console.WriteLine($"Date: {date:D}");   // Output: Date: czwartek, 25 grudnia 2025
 ```
 
 > Od .NETa 6 możemy też interpolować `string`i przy użyciu wybranego dostawcy formatu, z pomocą statycznej metody `string.Create`:
@@ -182,7 +182,7 @@ To najczęściej używane formaty, które pokrywają większość typowych zasto
 | `D`          | Dziesiętny       | `(123).ToString("D5")`      | `00123`         |
 | `F`          | Stałoprzecinkowy | `(1234.567).ToString("F2")` | `1234.57`       |
 | `N`          | Liczba           | `(1234.567).ToString("N2")` | `1,234.57`      |
-| `P`          | Procent          | `(0.123).ToString("P1")`    | `12.3 %`        |
+| `P`          | Procent          | `(0.123).ToString("P1")`    | `12.3%`         |
 | `X`          | Szesnastkowy     | `(255).ToString("X")`       | `FF`            |
 
 > [!NOTE]
