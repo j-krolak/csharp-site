@@ -7,7 +7,7 @@ weight: 10
 
 An enumerator is a concept similar to iterators in C++. An enumerator is a read-only, forward-only cursor that allows for one-directional traversal of a sequence of values.
 
-For an object to be called an enumerator, it must have a public parameterless `bool MoveNext()` method and a `Current` property. Most often, the `System.Collections.Generics.IEnumerator<T>` interface (or less commonly `System.Collections.IEnumerator`) is implemented, which provides the aforementioned method and property.
+For an object to be called an enumerator, it must have a public parameterless `bool MoveNext()` method and a `Current` property. Most often, the `System.Collections.Generic.IEnumerator<T>` interface (or less commonly `System.Collections.IEnumerator`) is implemented, which provides the aforementioned method and property.
 
 The definitions of these interfaces are as follows:
 
@@ -264,8 +264,14 @@ sequenceDiagram
     participant Odds
     participant Fibonacci
     activate Main
-    Main->>+Odds: MoveNext()
+    Main->>Odds: MoveNext()
     deactivate Main
+    activate Odds
+    Odds->>Fibonacci: MoveNext()
+    deactivate Odds
+    activate Fibonacci
+    Fibonacci->>Odds: 0
+    deactivate Fibonacci
     activate Odds
     Odds->>Fibonacci: MoveNext()
     deactivate Odds

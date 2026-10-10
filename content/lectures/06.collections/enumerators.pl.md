@@ -7,7 +7,7 @@ weight: 10
 
 Enumerator to podobny koncept do iteratorów z C++. Enumerator to kursor działający w trybie "tylko do odczytu", który pozwala na jednokierunkowe przeglądanie sekwencji wartości.
 
-Żeby obiekt można było nazwać enumeratorem to musi posiadać publiczną bezparametrową metodę `bool MoveNext()` i właściwość `Current`. Najczęściej implementuje się interfejs `System.Collections.Generics.IEnumerator<T>` (lub rzadziej `System.Collections.IEnumerator`), który dostarcza wspomnianą metodę i właściwość.
+Żeby obiekt można było nazwać enumeratorem to musi posiadać publiczną bezparametrową metodę `bool MoveNext()` i właściwość `Current`. Najczęściej implementuje się interfejs `System.Collections.Generic.IEnumerator<T>` (lub rzadziej `System.Collections.IEnumerator`), który dostarcza wspomnianą metodę i właściwość.
 
 Definicja tych interfejsów wygląda następująco:
 
@@ -316,7 +316,7 @@ sequenceDiagram
     deactivate Main
 ```
 
-Metoda `Odds` jest filtrem dla sekwencji `Fibonacci`, na tej zasadzie opieraja się większość metod z LINQ.
+Metoda `Odds` jest filtrem dla sekwencji `Fibonacci`, na tej zasadzie opierają się większość metod z LINQ.
 
 > [!NOTE]
 > **Kod źródłowy - IteratorMethods**

@@ -380,7 +380,7 @@ Specify an additional sorting criterion for elements that are equal according to
 ```csharp
 var people = new[] { new { L = "Smith", F = "John" }, new { L = "Doe", F = "Jane" }, new { L = "Smith", F = "Anna" } };
 var sorted = people.OrderBy(p => p.L).ThenBy(p => p.F);
-// sorted: Anna Smith, Jane Doe, John Smith
+// sorted: Jane Doe, Anna Smith, John Smith
 ```
 
 #### The `Reverse` Method
