@@ -148,8 +148,8 @@ public class Person
     [JsonProperty("FirstName")]
     public string Name { get; set; }
 
-    [JsonProperty] // Fields are not serialized by default in Newtonsoft.Json.
-    public DateTime DateOfBirth;
+    [JsonProperty] // Non-public fields are not serialized by default in Newtonsoft.Json.
+    private DateTime DateOfBirth;
 
     [JsonIgnore]
     public int Age { get; set; }

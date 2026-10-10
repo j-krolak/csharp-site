@@ -13,7 +13,7 @@ Poniższy diagram przedstawia typy sieciowe w bibliotece systemowej wraz z warst
 
 ### Warstwa transportu
 
-W warstwie transportu znajdują się dwa podstawowe protokoły wysyłania i odbierania danych: `TCP` (*Transmission and Control Protocol*) i `UDP` (*Univeral Datagram Protocol*). Protokół `TCP` bazuje na nawiązaniu połączenia. Wykorzystywany wszędzie tam gdzie potrzebna jest gwarancja, że dane dotrą w całości i w dobrej kolejności. Protokół `UDP` nie wymaga nawiązywania połączenia, nie gwarantuje też dostarczenia danych, ale wspierają rozgłaszanie. Wykorzystywane tam gdzie szybkość jest ważniejsza niż niezawodność, np. strumieniowanie wideo, rozmowy głosowe.
+W warstwie transportu znajdują się dwa podstawowe protokoły wysyłania i odbierania danych: `TCP` (*Transmission Control Protocol*) i `UDP` (*User Datagram Protocol*). Protokół `TCP` bazuje na nawiązaniu połączenia. Wykorzystywany wszędzie tam gdzie potrzebna jest gwarancja, że dane dotrą w całości i w dobrej kolejności. Protokół `UDP` nie wymaga nawiązywania połączenia, nie gwarantuje też dostarczenia danych, ale wspierają rozgłaszanie. Wykorzystywane tam gdzie szybkość jest ważniejsza niż niezawodność, np. strumieniowanie wideo, rozmowy głosowe.
 
 `UDP` i `TCP` pozwalają na przesył danych, nie definiują wiadomości jakie można nimi wysyłać ani jakiejś ustalonej kolejności ich wymiany. Używając bezpośrednio tych protokołów musimy sami o to zadbać o takie rzeczy jak autentykacja czy szyfrowanie.
 
