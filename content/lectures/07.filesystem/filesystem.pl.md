@@ -142,11 +142,11 @@ Console.WriteLine($"Root: {dirInfo.Root}");
 DirectoryInfo subDir = dirInfo.CreateSubdirectory("Subdir");
 
 FileInfo[] filesInDir = dirInfo.GetFiles("*.dll");
-Console.WriteLine("DLL files in the directory:");
+Console.WriteLine("\nDLL files in the directory:");
 foreach (var f in filesInDir)
     Console.WriteLine($"    {f.Name}");
 
-Console.WriteLine("Subdirectories in the directory:");
+Console.WriteLine("\nSubdirectories in the directory:");
 DirectoryInfo[] dirsInDir = dirInfo.GetDirectories();
 foreach (var d in dirsInDir)
     Console.WriteLine($"    {d.Name}");
@@ -166,7 +166,7 @@ string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDoc
 Klasa `DriveInfo` pozwala uzyskać informacje o zamontowanych dyskach w systemie.
 
 ```csharp
-const int GB = 1024 * 1024 * 1024;
+const long GB = 1024 * 1024 * 1024;
 DriveInfo root = new DriveInfo("/");
 
 Console.WriteLine($"Total size: {root.TotalSize / GB} GB");
@@ -179,9 +179,9 @@ foreach (DriveInfo drive in DriveInfo.GetDrives())
 }
 ```
 
-## Zdarzenia systemu pliku
+## Zdarzenia systemu plików
 
-Klasa `FileSystemWatcher` pozwala na nasłuchiwanie zdarzeń systemu pliku. Dla określonej ścieżki pozwala na monitorowanie zdarzeń utworzenia, usunięcia, modyfikacji, lub zmiany nazwy pliku lub katalogu. Jest to rozwiązanie pod spodem korzystające z `inotify` na systemie Linux lub innych podobnych w zależności od systemu operacyjnego.
+Klasa `FileSystemWatcher` pozwala na nasłuchiwanie zdarzeń systemu plików. Dla określonej ścieżki pozwala na monitorowanie zdarzeń utworzenia, usunięcia, modyfikacji, lub zmiany nazwy pliku lub katalogu. Jest to rozwiązanie pod spodem korzystające z `inotify` na systemie Linux lub innych podobnych w zależności od systemu operacyjnego.
 
 ```csharp
 namespace FileSystemEvents;

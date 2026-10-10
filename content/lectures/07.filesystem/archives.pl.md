@@ -5,7 +5,7 @@ weight: 30
 
 # Archiwa
 
-Archiwa to pliki będące kontenerami dla innych plików i folderów. Biblioteka standardowa C# pozwala na pracę z archiwami w formacie `.zip` oraz `.tar` (od .NET 7) poprzez klasy w przestrzeni nazw `System.IO.Compression`.
+Archiwa to pliki będące kontenerami dla innych plików i folderów. Biblioteka standardowa C# pozwala na pracę z archiwami w formacie `.zip` oraz `.tar` (od .NET 7) poprzez klasy w przestrzeniach nazw `System.IO.Compression` i `System.Formats.Tar`.
 
 ## Archiwa ZIP
 

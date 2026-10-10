@@ -265,7 +265,7 @@ Console.WriteLine(fs.Position); // 20000
 
 ### Compression
 
-The standard library provides three compression methods represented by the stream decorators `GZipStream`, `DeflateStream`, `BrotliStream`. When we wrap a stream in, for example, `GZipStream` and write data to it, `GZipStream` first compresses this data before passing it on to the wrapped stream. During reads, the process is reversed: `GzipStream` reads compressed data from the wrapped stream and decompresses it before returning it.
+The standard library provides three compression methods represented by the stream decorators `GZipStream`, `DeflateStream`, `BrotliStream`. When we wrap a stream in, for example, `GZipStream` and write data to it, `GZipStream` first compresses this data before passing it on to the wrapped stream. During reads, the process is reversed: `GZipStream` reads compressed data from the wrapped stream and decompresses it before returning it.
 
 1. Compression
 
@@ -325,7 +325,7 @@ The biggest advantage over the POSIX API is stream adapters. For streams, we hav
 
 ### Text Adapters
 
-Text adapters add the ability to read and write characters, words, and entire lines of text to a stream. They allow operations such as `string? ReadLine()`, `string? ReadToEnd()`, `void WriteLine(string str)`, `void Write(string str)`.
+Text adapters add the ability to read and write characters, words, and entire lines of text to a stream. They allow operations such as `string? ReadLine()`, `string ReadToEnd()`, `void WriteLine(string str)`, `void Write(string str)`.
 
 1. `StreamReader`
    ```csharp
