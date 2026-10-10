@@ -66,7 +66,7 @@ namespace SharedMemory;
 public class Program
 {
     private const string ShmFile = "/dev/shm/shared_memory.shm";
-    private const string MutexName = "Global\shared_memory_mutex";
+    private const string MutexName = "Global\\shared_memory_mutex";
     
     public static void Main(string[] args)
     {
@@ -128,7 +128,7 @@ namespace SharedMemory;
 public class Program
 {
     private const string MapName = "SharedMemory";
-    private const string MutexName = "Global\shared_memory_mutex";
+    private const string MutexName = "Global\\shared_memory_mutex";
     
     public static void Main(string[] args)
     {
