@@ -100,7 +100,7 @@ Kolejny sposób na zwrócenie kilku wartości z funkcji, alternatywa dla paramet
 
 ### Zamiana wartości
 
-Krotki mogą byś użyte do zamiany wartości dwóch lub więcej zmiennych, bez wprowadzania wartości tymczasowych. Nie jest to optymalne rozwiązanie, ale za to bardzo czytelne:
+Krotki mogą być użyte do zamiany wartości dwóch lub więcej zmiennych, bez wprowadzania wartości tymczasowych. Nie jest to optymalne rozwiązanie, ale za to bardzo czytelne:
 
 ```csharp
 public static void Swap<T>(ref T a, ref T b)

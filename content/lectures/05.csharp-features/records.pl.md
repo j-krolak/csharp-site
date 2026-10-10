@@ -179,7 +179,7 @@ Console.WriteLine(john); // Person { FirstName = John, LastName = Doe, Age = 30 
 Console.WriteLine(jane); // Person { FirstName = Jane, LastName = Doe, Age = 0 }
 ```
 
-### `struct record` (C# 10)
+### `record struct` (C# 10)
 
 Od C# 10 możemy również tworzyć rekordy typu bezpośredniego. Kompilator dla `record struct` wygeneruje mutowalną strukturę, a dla `readonly record struct` niemutowalną.
 
@@ -227,7 +227,7 @@ Tworzy się je za pomocą słowa kluczowego `new` i inicjalizatora obiektów:
 var anon = new { Name = "Alice", Age = 23 };
 ```
 
-Kompilator automatycznie wygeneruje klasę, która posiada publiczne, niemodyfikowalne właściwości, konstruktor oraz przeciążenia `Equals`, `GetHashCode` i `ToString`.
+Kompilator automatycznie wygeneruje klasę, która posiada publiczne, niemodyfikowalne właściwości, konstruktor oraz nadpisania `Equals`, `GetHashCode` i `ToString`.
 
 {{% details title="Klasa anonimowa wygenerowana przez kompilator" open=false %}}
 ```csharp
