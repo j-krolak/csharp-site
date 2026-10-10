@@ -104,7 +104,7 @@ dotnet sln list
 The following should then appear in the list:
 
 ```text
-<LibraryName>.Lib
+<LibraryName>.Lib/<LibraryName>.Lib.csproj
 ```
 
 ### Creating a Console Application Project
