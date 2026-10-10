@@ -87,7 +87,7 @@ In this case, the entire structure is visible:
 - `namespace Hello` groups the code into a logical unit.
 - `class Program` is a container for data and methods.
 - `static void Main(string[] args)` is the program's entry point.
-- `using System;` imports the namespace where the `Console` class is defined. It is the equivalent of `#include` from C++.
+- `using System;` imports the namespace where the `Console` class is defined. It is the equivalent of `using namespace` from C++.
 
 The statement `Console.WriteLine("Hello, World!");` is a call to the static `WriteLine` method on the `Console` class.
 
