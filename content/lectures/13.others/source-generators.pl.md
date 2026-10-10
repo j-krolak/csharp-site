@@ -45,7 +45,7 @@ Warto pamiętać, że aby generator mógł rozszerzyć klasę napisaną przez pr
 
 Metody częściowe pozwalają zadeklarować sygnaturę metody w jednym pliku, a implementację w innym. Działają one w dwóch trybach:
 
-1.  **Opcjonalne:** Jeśli metoda zwraca `void`, jest prywatna i nie ma parametrów `out`, jej implementacja jest opcjonalna. Jeśli nie zostanie dostarczona, kompilator całkowicie usuwa wywołanie metody z kodu wynikowego.
+1.  **Opcjonalne:** Jeśli metoda zwraca `void`, nie ma modyfikatora dostępu i nie ma parametrów `out`, jej implementacja jest opcjonalna. Jeśli nie zostanie dostarczona, kompilator całkowicie usuwa wywołanie metody z kodu wynikowego.
 2.  **Wymagane (C# 9.0+):** Jeśli metoda ma modyfikator dostępu (np. `public`) lub zwraca wartość, implementacja **musi** zostać dostarczona (zazwyczaj przez generator).
 
 ```csharp
