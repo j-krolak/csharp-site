@@ -5,7 +5,7 @@ weight: 20
 
 # Basic Types
 
-Built-in type keywords (e.g., `int`, `double`, `bool`) are direct aliases for types defined in the `System` namespace (e.g., `System.Int32`, `System.Double`, `System.Boolean`). It's worth remembering that these types are regular classes in the standard library, and they define useful constants and methods, e.g., `int.MaxValue`, `int.Parse(string)`, `float.NegativeInfinity`.
+Built-in type keywords (e.g., `int`, `double`, `bool`) are direct aliases for types defined in the `System` namespace (e.g., `System.Int32`, `System.Double`, `System.Boolean`). It's worth remembering that these types are regular structs in the standard library, and they define useful constants and methods, e.g., `int.MaxValue`, `int.Parse(string)`, `float.NegativeInfinity`.
 
 ## Numeric Types
 
