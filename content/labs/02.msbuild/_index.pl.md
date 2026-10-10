@@ -21,7 +21,7 @@ Większa aplikacja .NET może składać się z kilku oddzielnych projektów. Ka�
 Do pogrupowania projektów należących do jednej aplikacji służy **solucja**. Solucja określa, które projekty są ze sobą logicznie powiązane, ale sama nie definiuje zależności pomiędzy nimi. 
 ## .NET CLI
 
-Podczas pracy z .NET nie jesteśmy ograniczeni do akcji dostępnych w Visual Studio czy Riderze. Często aplikacje budowane są w środowiskach serwerowych bez interfejsu graficznego (np. w procesach CI/CD (ang. *Continous Integragion and Continous Delivery*)). Z tego powodu musisz wiedzieć, jak wykonać te operacje bezpośrednio z terminala. 
+Podczas pracy z .NET nie jesteśmy ograniczeni do akcji dostępnych w Visual Studio czy Riderze. Często aplikacje budowane są w środowiskach serwerowych bez interfejsu graficznego (np. w procesach CI/CD (ang. *Continuous Integration and Continuous Delivery*)). Z tego powodu musisz wiedzieć, jak wykonać te operacje bezpośrednio z terminala. 
 
 Służy do tego **.NET CLI**. Listę dostępnych poleceń możemy wyświetlić za pomocą polecenia `dotnet --help`. Pomoc do poszczególnych poleceń możemy wyświetlić za pomocą komendy: `dotnet <komenda> --help`
 
@@ -95,7 +95,7 @@ dotnet sln list
 Wówczas na liście powinien pojawić się:
 
 ```text
-<LibraryName>.Lib
+<LibraryName>.Lib/<LibraryName>.Lib.csproj
 ```
 
 ### Tworzenie projektu aplikacji konsolowej
