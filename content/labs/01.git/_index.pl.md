@@ -50,7 +50,7 @@ Pliki naszego projektu mogą znajdować się w jednym z czterech głównych stan
 - `committed`
 
 Nowo utworzony plik, który nie został dodany do repozytorium, znajduje się w stanie `untracked`. Oznacza to, że Git widzi plik w katalogu projektu, ale jeszcze go nie śledzi.
-Po zmodyfikowaniu plików w katalogu roboczym pliki przechodzą do stanu `modified`. Staging area to poczekalnia. Aby zasygnalizować sztywnemu Gitowi, które konkretnie zmiany chcemy zawrzeć w najbliższym commicie, używamy `git add <nazwa pliku>`. Plik wówczas zmieni swój stan na `staged`. Po dodaniu wszystkich plików możemy utworzyć commita w repozytorium za pomocą komendy `git commit -m <wiadomość commita>`. Wówczas pliki zostaną zatwierdzone w commicie. Jeśli chcemy przesłać lokalne commity do zdalnego repozytorium możemy skorzystać z komendy `git push`. 
+Po zmodyfikowaniu plików w katalogu roboczym pliki przechodzą do stanu `modified`. Staging area to poczekalnia. Aby zasygnalizować sztywnemu Gitowi, które konkretnie zmiany chcemy zawrzeć w najbliższym commicie, używamy `git add <nazwa pliku>`. Plik wówczas zmieni swój stan na `staged`. Po dodaniu wszystkich plików możemy utworzyć commita w repozytorium za pomocą komendy `git commit -m "<wiadomość commita>"`. Wówczas pliki zostaną zatwierdzone w commicie. Jeśli chcemy przesłać lokalne commity do zdalnego repozytorium możemy skorzystać z komendy `git push`. 
 
 ### Sprawdzanie stanu repozytorium
 
@@ -380,7 +380,7 @@ Pełny proces może wyglądać np. tak:
 5. `git commit`
 {{% /steps %}}
 
-Komenda `git merge --abort` przerywa obecny merge i przywraca repozytorium do stanu sprzed rozpoczęcia operacji. Jest to szczególnie przydatne, gdy konfliktów jest dużo i chcemy wrócić o wcześniejszego stanu.
+Komenda `git merge --abort` przerywa obecny merge i przywraca repozytorium do stanu sprzed rozpoczęcia operacji. Jest to szczególnie przydatne, gdy konfliktów jest dużo i chcemy wrócić do wcześniejszego stanu.
 
 ## Zadanie 2
 
@@ -426,7 +426,7 @@ Polecenie `git reset` służy do cofania wskaźnika `HEAD` do wcześniejszego co
 * **`git reset --soft <commit>`** – cofa historię, ale zachowuje wszystkie zmiany i od razu umieszcza je w **staging area**. Przydatne, gdy np. zrobiliśmy commita za wcześnie i
 chcemy tylko dołożyć do niego kolejne pliki.
 * **`git reset --mixed <commit>`** (lub brak flagi) – cofa historię, zachowuje zmiany na dysku, ale wyciąga je ze staging area (wracają do stanu **modified**).
-* **`git reset --hard <commit>`** – cofa historię i **bezpowrotnie usuwa** wszystkie zmodyfikowane śledzone pliki. Twój folder z projektem staje się dokładną kopią wskazanego commita.
+* **`git reset --hard <commit>`** – cofa historię i **bezpowrotnie usuwa** wszystkie zmiany w śledzonych plikach. Twój folder z projektem staje się dokładną kopią wskazanego commita.
 
 > [!WARNING]
 > Flaga `--hard` trwale usuwa niezapisany kod. Pliki typu `untracked` nie są jednak przez nią usuwane.
@@ -436,7 +436,7 @@ chcemy tylko dołożyć do niego kolejne pliki.
 Jeśli nie chcieliśmy jeszcze robić commita, ale nasz kod jest dobry, jednak brakuje jeszcze kawałka kodu możemy za pomocą polecenia `git reset --soft HEAD~1` cofnąć ostatni commit, pozostawiając jego zmiany w staging area.
 ### Zepsułem niescommitowane zmiany
 
-Jeśli nasz kod do niczego się nie nadaje i chcemy się cofnąć do poprzedniego commita możemy skorzystać z komendy `git reset --hard HEAD`. Polecenie to usuwa lokalne zmiany w śledzonych plikach oraz zmiany znajdujące się w staging area. Pliki `untracked` nie zostaną przez tę komendę usunięte. Jeśli chcemy całkowicie usunąć ostatni lokalny commit możemy skorzystać z `git reset --hard HEAD~1`.
+Jeśli nasz kod do niczego się nie nadaje i chcemy się cofnąć do ostatniego commita możemy skorzystać z komendy `git reset --hard HEAD`. Polecenie to usuwa lokalne zmiany w śledzonych plikach oraz zmiany znajdujące się w staging area. Pliki `untracked` nie zostaną przez tę komendę usunięte. Jeśli chcemy całkowicie usunąć ostatni lokalny commit możemy skorzystać z `git reset --hard HEAD~1`.
 
 ### Wypchnąłem coś złego i ktoś zdążył to już pobrać.
 
