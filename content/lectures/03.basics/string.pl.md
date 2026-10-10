@@ -5,7 +5,7 @@ weight: 30
 
 ## Typ `string`
 
-Typ `string` jest aliasem dla klasy `System.String`. Jest to kontener przechowujący ciągłą tablicę znaków. Tak jak i `char` typ `string` jest kodowany za pomocą UTF-16. W przeciwieństwie do C++ obiekt typu `string` jest niezmienialny (*immutable*). Dzięki temu *runtime* może stosować różne sztuczki do optymalizacji w okół tego typu. Operacje, które wydają się, że ten obiekt zmieniają, tak naprawdę tworzą nowy obiekt typu `string` w pamięci. Typ `string` jest typem referencyjnym, ale porównanie za pomocą operatora zachowuje się tak, jakby był to typ bezpośredni.
+Typ `string` jest aliasem dla klasy `System.String`. Jest to kontener przechowujący ciągłą tablicę znaków. Tak jak i `char` typ `string` jest kodowany za pomocą UTF-16. W przeciwieństwie do C++ obiekt typu `string` jest niezmienialny (*immutable*). Dzięki temu *runtime* może stosować różne sztuczki do optymalizacji wokół tego typu. Operacje, które wydają się, że ten obiekt zmieniają, tak naprawdę tworzą nowy obiekt typu `string` w pamięci. Typ `string` jest typem referencyjnym, ale porównanie za pomocą operatora `==` zachowuje się tak, jakby był to typ bezpośredni.
 
 ```csharp
 string txt = "Hello, ";
@@ -28,7 +28,7 @@ Console.WriteLine(txt2.ToUpper()); // "HELLO, WORLD!"
 Stringa można stworzyć albo za pomocą literału, np. `"Hello"`, albo za pomocą konstruktora klasy. Tak jak w każdym cywilizowanym języku stringi można ze sobą dodawać, można je indeksować. Właściwość indeksowania jest jednak tylko do odczytu. Dodatkowo posiada on właściwość `Length`, zwracającą jego długość.
 
 ```csharp
-char[] chars = new {'w', 'o', 'r', 'l', 'd'};
+char[] chars = new[] {'w', 'o', 'r', 'l', 'd'};
 string fromLiteral = "Hello";
 string fromArray = new string(chars);
 string fromSubArray = new string(chars, 1, 2);
@@ -37,7 +37,7 @@ string concatenated = fromLiteral + ' ' + fromArray;
 Console.WriteLine(concatenated);
 Console.WriteLine("string Length: " + concatenated.Length);
 char space = concatenated[5];
-concatenated[5] = '_'; // compilation error, read-only
+// concatenated[5] = '_'; // compilation error, read-only
 ```
 
 ## Modyfikowalne stringi
@@ -102,7 +102,7 @@ string quote = @"Her name was ""Sara.""";
 
 ## Surowe literały (*Raw string literals*) (C# 11)
 
-Surowe literały zaczynają się i kończą trzema lub więcej znakami `"`. Występują w wersji jedno i wielolinijkowej. W nich nie trzeba uciekać sekwencji specjalnych jeszcze bardziej. Dozwolone są kolejne znaki `"`, o ile jest ich mniej niż w otwierających i zamykających ciapkach. W wielolinijkowej wersji białe znaki po otwarciu stringa są ignorowane do nowej lini, natomiast białe znaki poprzedzające zamknięcie są usuwane z każdej lini stringa. Szczególnie przydatne, gdy chcemy utrzymać ładnie sformatowany kod wewnątrz stringa.
+Surowe literały zaczynają się i kończą trzema lub więcej znakami `"`. Występują w wersji jedno i wielolinijkowej. W nich nie trzeba uciekać sekwencji specjalnych jeszcze bardziej. Dozwolone są kolejne znaki `"`, o ile jest ich mniej niż w otwierających i zamykających ciapkach. W wielolinijkowej wersji białe znaki po otwarciu stringa są ignorowane do nowej linii, natomiast białe znaki poprzedzające zamknięcie są usuwane z każdej linii stringa. Szczególnie przydatne, gdy chcemy utrzymać ładnie sformatowany kod wewnątrz stringa.
 
 ```csharp
 var str1 = """This is a "raw string literal".""";

@@ -9,7 +9,7 @@ weight: 60
 
 ## Pakowanie (*boxing*)
 
-Rzutowanie typu bezpośredniego do/z `object`u wiąze się z tzw. operacją pakowania/rozpakowania (*boxing/unboxing*). Rzutowanie w dół wymaga jawnego rzutowania, jeżeli się nie powiedzie to Runtime rzuca wyjątkiem `InvalidCastException`. Operacja pakowania polega na zaalokowaniu typu bezpośredniego na stercie i skopiowaniu go tam. Jest to operacja kosztowna, należy jej unikać jeżeli się da. Rozpakowanie polega na skopiowaniu typu bezpośredniego z powrotem na stos.
+Rzutowanie typu bezpośredniego do/z `object`u wiąże się z tzw. operacją pakowania/rozpakowania (*boxing/unboxing*). Rzutowanie w dół wymaga jawnego rzutowania, jeżeli się nie powiedzie to Runtime rzuca wyjątkiem `InvalidCastException`. Operacja pakowania polega na zaalokowaniu typu bezpośredniego na stercie i skopiowaniu go tam. Jest to operacja kosztowna, należy jej unikać jeżeli się da. Rozpakowanie polega na skopiowaniu typu bezpośredniego z powrotem na stos.
 
 ```csharp
 int num = 42;
@@ -50,7 +50,7 @@ Console.WriteLine(3.Equals(i));
 
 ## `ToString`
 
-Metoda `ToString` zwraca tekstową reprezentację obiektu. Wszystkie typy wbudowane ją przeciążają. Jeżeli typ by jej nie przeciążył, to wtedy `ToString` zwraca nazwę typu. Przeciążyć tą metodę można następująco:
+Metoda `ToString` zwraca tekstową reprezentację obiektu. Wszystkie typy wbudowane ją nadpisują. Jeżeli typ by jej nie nadpisał, to wtedy `ToString` zwraca nazwę typu. Nadpisać tą metodę można następująco:
 
 ```csharp
 Person alice = new Person {Name = "Alice", Age = 30};
@@ -66,13 +66,13 @@ class Person
 
 ## `GetType` i operator `typeof`
 
-Operator `typeof` pozwala pozyskać informację o typie w czasie kompilacji, metoda `GetType` w czasie wykonania programu. Poza tym obie te metody działają identycznie: zwracają obiekt będący reprezentacją typ typu.
+Operator `typeof` pozwala pozyskać informację o typie w czasie kompilacji, metoda `GetType` w czasie wykonania programu. Poza tym obie te metody działają identycznie: zwracają obiekt będący reprezentacją typu.
 
 ```csharp
 DateTime now = DateTime.Now;
 
 Console.WriteLine(now.GetType()); // evaluated at runtime
-Console.WriteLine(typeof(now)); // evaluated at compile time
+Console.WriteLine(typeof(DateTime)); // evaluated at compile time
 
-Console.WriteLine(typeof(now) == now.GetType());
+Console.WriteLine(typeof(DateTime) == now.GetType());
 ```

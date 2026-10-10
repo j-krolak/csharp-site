@@ -5,7 +5,7 @@ weight: 70
 
 # Instrukcje
 
-Instrukcje `if`, `for`, `while` i `do while` wyglądają identycznie jak w C++. Jedyną różnicą jest warunek logiczny w tych instrukcjach, który musi się ewaluuować do wartości boolowskiej.
+Instrukcje `if`, `for`, `while` i `do while` wyglądają identycznie jak w C++. Jedyną różnicą jest warunek logiczny w tych instrukcjach, który musi się ewaluować do wartości boolowskiej.
 
 ## Instrukcja `switch`
 

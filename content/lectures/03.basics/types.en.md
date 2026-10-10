@@ -190,4 +190,4 @@ public class Person { public string Name; public int Age; }
 ```
 
 - In the case of `ModifyValueType`, the method operates on a completely independent copy of the `Point` struct. The changes are not visible outside.
-- In the case of `ModifyReferenceType`, the method receives a copy of the reference, which points to the same `Person` object. The change to the `Name` property is permanent because it modifies the shared object. However, if we were to assign a new instance (`new Person(...)`) to the `person` parameter, it would only affect the local copy of the reference, and the original variable outside the method would still point to the original object.
+- In the case of `ModifyReferenceType`, the method receives a copy of the reference, which points to the same `Person` object. The change to the `Name` field is permanent because it modifies the shared object. However, if we were to assign a new instance (`new Person(...)`) to the `person` parameter, it would only affect the local copy of the reference, and the original variable outside the method would still point to the original object.
