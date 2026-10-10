@@ -7,7 +7,7 @@ title: "Wzorce"
 Wzorce (*patterns*) to mechanizm, który pozwala na sprawdzanie, czy dana zmienna lub wyrażenie ma określoną "postać".
 Wzorców można używać w następujących miejscach:
 
-* instrukcja `is`, sprawdza czy wyrażenie pasuje do wzorca, zwracając wynik w postaci `bool`a:
+* operator `is`, sprawdza czy wyrażenie pasuje do wzorca, zwracając wynik w postaci `bool`a:
   ```csharp
   expression is pattern
   ```
@@ -21,10 +21,10 @@ bool IsWorkingDay(object date)
     if (date is DateTime dateTime)
     {
         if (dateTime.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
-            return true;
-        return false;
+            return false;
+        return true;
     }
-    return date is DateOnly {DayOfWeek: not (DayOfWeek.Saturday or DayOfWeek.Sunday)}
+    return date is DateOnly {DayOfWeek: not (DayOfWeek.Saturday or DayOfWeek.Sunday)};
 }
 ```
 

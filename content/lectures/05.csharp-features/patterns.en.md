@@ -7,7 +7,7 @@ title: "Patterns"
 Patterns are a mechanism that allows you to check if a given variable or expression has a specific "form".
 Patterns can be used in the following places:
 
-* The `is` statement, which checks if an expression matches a pattern, returning the result as a `bool`:
+* The `is` operator, which checks if an expression matches a pattern, returning the result as a `bool`:
   ```csharp
   expression is pattern
   ```
@@ -21,10 +21,10 @@ bool IsWorkingDay(object date)
     if (date is DateTime dateTime)
     {
         if (dateTime.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
-            return true;
-        return false;
+            return false;
+        return true;
     }
-    return date is DateOnly {DayOfWeek: not (DayOfWeek.Saturday or DayOfWeek.Sunday)}
+    return date is DateOnly {DayOfWeek: not (DayOfWeek.Saturday or DayOfWeek.Sunday)};
 }
 ```
 

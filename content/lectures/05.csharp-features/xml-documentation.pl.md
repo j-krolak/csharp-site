@@ -76,7 +76,7 @@ Tylko 5 znaków wymaga uciekania specjalnymi sekwencjami:
 <returns>description</returns>
 ```
 
-`param` opisuje paramter metody:
+`param` opisuje parametr metody:
 ```xml
 <param name="name">description</param>
 ```
